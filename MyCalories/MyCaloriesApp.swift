@@ -12,6 +12,7 @@ struct MyCaloriesApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .withRouter()
         }
     }
 }
