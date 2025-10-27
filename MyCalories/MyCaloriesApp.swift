@@ -13,6 +13,7 @@ struct MyCaloriesApp: App {
         WindowGroup {
             ContentView()
                 .withRouter()
+                .fontDesign(.rounded) 
         }
     }
 }

@@ -28,22 +28,21 @@ enum Constants {
     }
     
     enum Height {
-        static let primaryButton: CGFloat = 54
+        static let primaryButton: CGFloat = 56
     }
     
     enum Size {
         static let optionButtonShape: CGFloat = 22
-        static let iconButton: CGFloat = 42
-        static let iconButtonImage: CGFloat = 18
+        static let iconButton: CGFloat = 40
     }
 }
 
 extension Font {
-    static let icon = Font.system(size: 17, weight: Font.Weight.medium)
+    static let icon = Font.system(size: 16, weight: Font.Weight.semibold)
     static let button = Font.system(size: 18, weight: Font.Weight.medium)
-    static let optionButton = Font.system(size: 18, weight: Font.Weight.regular)
-    static let title = Font.system(size: 24, weight: Font.Weight.semibold)
-    static let heading = Font.system(size: 32, weight: Font.Weight.bold)
+    static let optionButton = Font.system(size: 18, weight: Font.Weight.medium)
+    static let heading = Font.system(size: 34, weight: Font.Weight.bold)
+    static let subHeading = Font.system(size: 18, weight: Font.Weight.regular)
 }
 
 extension Color {
@@ -68,5 +67,6 @@ extension Color {
     static let secondaryBackground = Color(hex: "#F7F7F7")
     static let foreground = Color(hex: "#000000")
     static let secondaryForeground = Color(hex: "#555555")
+    static let tertiaryForeground = Color(hex: "#888888")
     static let buttonForeground = Color(hex: "#FFFFFF")
 }

@@ -11,19 +11,26 @@ struct GenderView: View {
     @Environment(Router.self) var router
     
     var body: some View {
-        VStack(alignment: .leading) {
+        VStack(alignment: .leading, spacing: 8) {
             Text("Choose your gender")
-                .font(Font.heading)
+                .font(.heading)
+            
+            Text("This will be used to calibrate your plan")
+                .font(Font.subHeading)
+                .foregroundColor(.secondaryForeground)
+
+            
             Spacer()
         }
+        .padding(.top)
         .padding(.horizontal)
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
         .safeAreaInset(edge: .bottom) {
             VStack {
-                OptionButton(label: "Male", shape: AnyShape(Male()), color: Color.blue) {
+                OptionButton(label: "Male", icon: .shape(AnyShape(Male())), color: Color.blue) {
                     router.navigateToTrialHistory()
                 }
-                OptionButton(label: "Female", shape: AnyShape(Female()), color: Color.purple) {
+                OptionButton(label: "Female", icon: .shape(AnyShape(Female())), color: Color.purple) {
                     router.navigateToTrialHistory()
                 }
             }
@@ -34,6 +41,7 @@ struct GenderView: View {
                 router.pop()
             }
         }
+        .toolbarVisibility(.hidden)
     }
 }
 

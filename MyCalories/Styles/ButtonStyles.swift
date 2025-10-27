@@ -9,10 +9,16 @@ import SwiftUI
 
 struct ScaleButtonStyle: ButtonStyle {
     var scaleAmount: CGFloat = 0.97
-    
+
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
             .scaleEffect(configuration.isPressed ? scaleAmount : 1.0)
             .animation(.easeOut(duration: 0.1), value: configuration.isPressed)
+            .onChange(of: configuration.isPressed) { _, isPressed in
+                if !isPressed {
+                    let generator = UIImpactFeedbackGenerator(style: .light)
+                    generator.impactOccurred()
+                }
+            }
     }
 }

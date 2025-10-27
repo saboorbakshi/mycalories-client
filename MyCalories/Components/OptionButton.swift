@@ -22,28 +22,42 @@ struct AnyShape: Shape {
     }
 }
 
+enum OptionIcon {
+    case shape(AnyShape)
+    case systemName(String)
+}
+
 struct OptionButton: View {
     let label: String
-    let shape: AnyShape?
+    let icon: OptionIcon?
     let color: Color?
     let action: () -> Void
 
-    init(label: String, shape: AnyShape? = nil, color: Color? = nil, action: @escaping () -> Void) {
+    init(label: String, icon: OptionIcon? = nil, color: Color? = nil, action: @escaping () -> Void) {
         self.label = label
-        self.shape = shape
+        self.icon = icon
         self.color = color
         self.action = action
     }
-    
+
     var body: some View {
         Button(action: action) {
             HStack(spacing: Constants.Spacing.optionButton) {
-                if let shape = shape {
+                if let icon = icon {
                     ZStack {
-                        shape
-                            .fill(color ?? .clear)
-                            .frame(width: Constants.Size.optionButtonShape,
-                                   height: Constants.Size.optionButtonShape)
+                        switch icon {
+                        case .shape(let shape):
+                            shape
+                                .fill(color!)
+                                .frame(width: Constants.Size.optionButtonShape,
+                                       height: Constants.Size.optionButtonShape)
+
+                        case .systemName(let systemName):
+                            Image(systemName: systemName)
+                                .frame(width: Constants.Size.optionButtonShape,
+                                       height: Constants.Size.optionButtonShape)
+                                .foregroundColor(color!)
+                        }
                     }
                     .padding(Constants.Padding.optionButtonShapeInset)
                     .background((color ?? .clear).opacity(0.1))
@@ -69,7 +83,11 @@ struct OptionButton: View {
         print("Button pressed")
     }
     
-    OptionButton(label: "Male", shape: AnyShape(Male()), color: Color.blue) {
+    OptionButton(label: "Male", icon: .shape(AnyShape(Male())), color: Color.blue) {
+        print("Button Pressed")
+    }
+    
+    OptionButton(label: "Male", icon: .systemName("hand.thumbsup.fill"), color: Color.blue) {
         print("Button Pressed")
     }
 }
