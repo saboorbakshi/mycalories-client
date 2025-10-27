@@ -15,19 +15,22 @@ struct DiscoveryView: View {
             title: "Where did you hear about us?",
             onBack: { router.pop() }
         ) {
-            OptionButton(label: "Instagram") {
+            OptionButton(label: "App Store") {
                 router.navigateToTrialHistory()
             }
             OptionButton(label: "TikTok") {
                 router.navigateToTrialHistory()
             }
-            OptionButton(label: "Friends and Family") {
+            OptionButton(label: "Instagram") {
                 router.navigateToTrialHistory()
             }
             OptionButton(label: "Facebook") {
                 router.navigateToTrialHistory()
             }
-            OptionButton(label: "YouTube") {
+            OptionButton(label: "Friends and Family") {
+                router.navigateToTrialHistory()
+            }
+            OptionButton(label: "Other") {
                 router.navigateToTrialHistory()
             }
         }

@@ -38,7 +38,7 @@ enum Constants {
     
     enum Size {
         static let optionButtonShape: CGFloat = 22
-        static let iconButton: CGFloat = 40
+        static let iconButton: CGFloat = 42
     }
 }
 
