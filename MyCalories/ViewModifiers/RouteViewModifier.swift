@@ -16,9 +16,49 @@ struct RouteViewModifier: ViewModifier {
             switch route {
             case .gender:
                 GenderView()
+            case .numWorkouts:
+                NumWorkoutsView()
+            case .discovery:
+                DiscoveryView()
             case .trialHistory:
                 TrialHistoryView()
-            }
+            case .longTermResults:
+                LongTermResultsView()
+            case .height:
+                HeightView()
+            case .weight:
+                WeightView()
+            case .dateOfBirth:
+                DateOfBirthView()
+            case .goal:
+                GoalView()
+            case .targetWeight:
+                TargetWeightView()
+            case .notHardAtAll:
+                NotHardAtAllView()
+            case .pace:
+                PaceView()
+            case .obstacle:
+                ObstacleView()
+            case .potential:
+                PotentialView()
+            case .thankYou:
+                ThankYouView()
+            case .rating:
+                RatingView()
+            case .notifications:
+                NotificationsView()
+            case .generatePlan:
+                GeneratePlanView()
+            case .settingUpPlan:
+                SettingUpPlanView()
+            case .planDetails:
+                PlanDetailsView()
+            case .saveProgress:
+                SaveProgressView()
+            case .paywall:
+                PaywallView()
+            }       
         }
         .environment(router)
     }
