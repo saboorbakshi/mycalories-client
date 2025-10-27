@@ -17,8 +17,8 @@ struct PrimaryButton: View {
                 .font(Font.button)
                 .frame(height: Constants.Height.primaryButton)
                 .frame(maxWidth: .infinity)
-                .background(Color.buttonBackground)
-                .foregroundColor(.buttonForeground)
+                .background(.backgroundButton)
+                .foregroundColor(.foregroundButton)
                 .cornerRadius(Constants.Radius.full)
                 .padding(.horizontal)
         }

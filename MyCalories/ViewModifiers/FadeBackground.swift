@@ -27,23 +27,3 @@ extension View {
         self.modifier(FadeBackground(position: position))
     }
 }
-
-
-//ScrollView {
-//    Text("Calorie tracking made easy")
-//}
-//.safeAreaInset(edge: .bottom) {
-//    Button(action: {
-//        router.navigateToGender()
-//    }) {
-//        Text("Continue")
-//            .font(Font.button)
-//            .frame(height: Constants.Height.button)
-//            .frame(maxWidth: .infinity)
-//            .background(Color.buttonBackground)
-//            .foregroundColor(.buttonForeground)
-//            .cornerRadius(Constants.Radius.full)
-//            .padding(.horizontal)
-//    }
-//    .backgroundBlur()
-//}

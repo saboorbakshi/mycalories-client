@@ -23,7 +23,7 @@ struct HeightAndWeightView: View {
             
             Text(Constants.Messages.customPlan)
              .font(Font.questionSubtitle)
-             .foregroundColor(.secondaryForeground)
+             .foregroundColor(.foregroundSecondary)
             
             Spacer()
         }

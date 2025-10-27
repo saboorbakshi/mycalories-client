@@ -34,18 +34,18 @@ struct AppButton: View {
     private var backgroundColor: Color {
         switch type {
         case .primary:
-            return .buttonBackground
+            return .backgroundButton
         case .secondary:
-            return .secondaryBackground
+            return .backgroundSecondary
         }
     }
     
     private var foregroundColor: Color {
         switch type {
         case .primary:
-            return .buttonForeground
+            return .foregroundButton
         case .secondary:
-            return .foreground
+            return .foregroundPrimary
         }
     }
 }

@@ -16,11 +16,11 @@ struct OnboardingToolbar: View {
                 Image(systemName: "chevron.left")
             }
             .font(Font.icon)
-            .foregroundColor(.secondaryForeground)
+            .foregroundColor(.foregroundPrimary)
             .frame(width: Constants.Size.iconButton, height: Constants.Size.iconButton)
             .background(
                 Circle()
-                    .fill(Color.secondaryBackground)
+                    .fill(.backgroundSecondary)
             )
 
             Spacer()

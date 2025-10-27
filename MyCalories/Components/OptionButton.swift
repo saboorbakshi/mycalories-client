@@ -66,12 +66,12 @@ struct OptionButton: View {
 
                 Text(label)
                     .font(Font.optionButton)
-                    .foregroundColor(.foreground)
+                    .foregroundColor(.foregroundPrimary)
                     .padding(.horizontal, Constants.Padding.optionButton)
             }
             .padding(Constants.Padding.optionButton)
             .frame(maxWidth: .infinity, minHeight: 70, alignment: .leading)
-            .background(Color.secondaryBackground)
+            .background(.backgroundSecondary)
             .cornerRadius(Constants.Radius.full)
         }
         .buttonStyle(ScaleButtonStyle())

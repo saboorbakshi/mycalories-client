@@ -35,7 +35,7 @@ struct OnboardingQuestionView<Content: View>: View {
             if let subtitle = subtitle {
                 Text(subtitle)
                     .font(Font.questionSubtitle)
-                    .foregroundColor(.secondaryForeground)
+                    .foregroundColor(.foregroundSecondary)
             }
             
             Spacer()
