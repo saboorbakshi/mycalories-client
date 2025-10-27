@@ -11,19 +11,15 @@ struct WelcomeView: View {
     @Environment(Router.self) var router
     
     var body: some View {
-        Text("Hello, Welcome buddies!")
-        
-        Button(action: {
-            router.navigateToGender()
-        }) {
-            Text("Continue")
-                .font(Font.button)
-                .frame(height: Constants.Height.button)
-                .frame(maxWidth: .infinity)
-                .background(Color.buttonBackground)
-                .foregroundColor(.buttonForeground)
-                .cornerRadius(Constants.Radius.full)
-
+        VStack {
+            Text("Calorie tracking made easy")
+                .font(Font.heading)
+        }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .safeAreaInset(edge: .bottom) {
+            PrimaryButton(label: "Get Started") {
+                router.navigateToGender()
+            }
         }
     }
 }

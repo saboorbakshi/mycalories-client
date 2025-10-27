@@ -24,6 +24,10 @@ class Router {
     func popToRoot() {
         path.removeLast(path.count)
     }
+    
+    func pop() {
+        path.removeLast()
+    }
 }
 
 enum Route {
