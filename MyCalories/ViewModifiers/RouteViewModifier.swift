@@ -24,10 +24,8 @@ struct RouteViewModifier: ViewModifier {
                 TrialHistoryView()
             case .longTermResults:
                 LongTermResultsView()
-            case .height:
-                HeightView()
-            case .weight:
-                WeightView()
+            case .heightAndWeight:
+                HeightAndWeightView()
             case .dateOfBirth:
                 DateOfBirthView()
             case .goal:

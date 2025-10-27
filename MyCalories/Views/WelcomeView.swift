@@ -18,8 +18,13 @@ struct WelcomeView: View {
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
         .padding()
         .safeAreaInset(edge: .bottom) {
-            PrimaryButton(label: "Get Started") {
-                router.navigateToGender()
+            VStack {
+                AppButton(label: "Get Started", type: .primary) {
+                    router.navigateToGender()
+                }
+                AppButton(label: "Already have an account?", type: .secondary) {
+                    router.navigateToGender()
+                }
             }
         }
     }

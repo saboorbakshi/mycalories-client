@@ -13,7 +13,7 @@ struct GenderView: View {
     var body: some View {
         OnboardingQuestionView(
             title: "Choose your gender",
-            subtitle: "This will be used to calibrate your plan.",
+            subtitle: Constants.Messages.customPlan,
             onBack: { router.pop() }
         ) {
             OptionButton(label: "Male", icon: .shape(AnyShape(Male())), color: Color.blue) {

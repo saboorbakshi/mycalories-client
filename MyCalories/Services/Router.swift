@@ -33,12 +33,8 @@ class Router {
         path.append(Route.longTermResults)
     }
     
-    func navigateToHeight() {
-        path.append(Route.height)
-    }
-    
-    func navigateToWeight() {
-        path.append(Route.weight)
+    func navigateToHeightAndWeight() {
+        path.append(Route.heightAndWeight)
     }
     
     func navigateToDateOfBirth() {
@@ -117,8 +113,7 @@ enum Route {
     case discovery
     case trialHistory
     case longTermResults
-    case height
-    case weight
+    case heightAndWeight
     case dateOfBirth
     case goal
     case targetWeight

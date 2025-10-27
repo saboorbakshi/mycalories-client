@@ -12,11 +12,11 @@ struct ObstacleView: View {
     
     var body: some View {
         OnboardingQuestionView(
-            title: "What's stopping yoy from reaching your goals?",
+            title: "What's stopping you from reaching your goals?",
             onBack: { router.pop() }
         ) {
             OptionButton(label: "Lack of consistency", icon: .shape(AnyShape(Statistics())), color: .purple) {
-                router.navigateToDiscovery()
+                router.navigateToPotential()
             }
             OptionButton(label: "Unhealthy eating habits", icon: .shape(AnyShape(Cookie())), color: .brown) {
                 router.navigateToPotential()

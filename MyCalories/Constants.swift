@@ -13,8 +13,13 @@ enum Position {
 }
 
 enum Constants {
+    enum Messages {
+        static let customPlan = "This will be used to calibrate your custom plan."
+    }
+    
     enum Spacing {
         static let small: CGFloat = 8
+        static let large: CGFloat = 24
     }
     
     enum Padding {
