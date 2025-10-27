@@ -11,19 +11,19 @@ struct OnboardingQuestionView<Content: View>: View {
     let title: String
     let subtitle: String?
     let onBack: () -> Void
-    @ViewBuilder let options: Content
+    @ViewBuilder let content: Content
     
     
     init(
         title: String,
         subtitle: String? = nil,
         onBack: @escaping () -> Void,
-        @ViewBuilder options: () -> Content
+        @ViewBuilder content: () -> Content
     ) {
         self.title = title
         self.subtitle = subtitle
         self.onBack = onBack
-        self.options = options()
+        self.content = content()
     }
     
     var body: some View {
@@ -44,7 +44,7 @@ struct OnboardingQuestionView<Content: View>: View {
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
         .safeAreaInset(edge: .bottom) {
             VStack {
-                options
+                content
             }
             .padding(.horizontal)
         }

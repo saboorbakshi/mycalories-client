@@ -34,6 +34,7 @@ enum Constants {
     
     enum Height {
         static let primaryButton: CGFloat = 56
+        static let wheelPicker: CGFloat = 200
     }
     
     enum Size {
