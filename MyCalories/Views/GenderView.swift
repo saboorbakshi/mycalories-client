@@ -11,37 +11,18 @@ struct GenderView: View {
     @Environment(Router.self) var router
     
     var body: some View {
-        VStack(alignment: .leading, spacing: 8) {
-            Text("Choose your gender")
-                .font(.heading)
-            
-            Text("This will be used to calibrate your plan")
-                .font(Font.subHeading)
-                .foregroundColor(.secondaryForeground)
-
-            
-            Spacer()
-        }
-        .padding(.top)
-        .padding(.horizontal)
-        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
-        .safeAreaInset(edge: .bottom) {
-            VStack {
-                OptionButton(label: "Male", icon: .shape(AnyShape(Male())), color: Color.blue) {
-                    router.navigateToTrialHistory()
-                }
-                OptionButton(label: "Female", icon: .shape(AnyShape(Female())), color: Color.purple) {
-                    router.navigateToTrialHistory()
-                }
+        OnboardingQuestionView(
+            title: "Choose your gender",
+            subtitle: "This will be used to calibrate your plan.",
+            onBack: { router.pop() }
+        ) {
+            OptionButton(label: "Male", icon: .shape(AnyShape(Male())), color: Color.blue) {
+                router.navigateToNumWorkouts()
             }
-            .padding(.horizontal)
-        }
-        .safeAreaInset(edge: .top) {
-            OnboardingToolbar {
-                router.pop()
+            OptionButton(label: "Female", icon: .shape(AnyShape(Female())), color: Color.purple) {
+                router.navigateToNumWorkouts()
             }
         }
-        .toolbarVisibility(.hidden)
     }
 }
 

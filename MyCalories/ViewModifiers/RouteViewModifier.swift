@@ -58,7 +58,7 @@ struct RouteViewModifier: ViewModifier {
                 SaveProgressView()
             case .paywall:
                 PaywallView()
-            }       
+            }
         }
         .environment(router)
     }

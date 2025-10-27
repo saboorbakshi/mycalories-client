@@ -14,7 +14,7 @@ enum Position {
 
 enum Constants {
     enum Spacing {
-        static let optionButton: CGFloat = 12
+        static let small: CGFloat = 8
     }
     
     enum Padding {
@@ -41,8 +41,8 @@ extension Font {
     static let icon = Font.system(size: 16, weight: Font.Weight.semibold)
     static let button = Font.system(size: 18, weight: Font.Weight.medium)
     static let optionButton = Font.system(size: 18, weight: Font.Weight.medium)
-    static let heading = Font.system(size: 34, weight: Font.Weight.bold)
-    static let subHeading = Font.system(size: 18, weight: Font.Weight.regular)
+    static let questionTitle = Font.system(size: 34, weight: Font.Weight.bold)
+    static let questionSubtitle = Font.system(size: 18, weight: Font.Weight.regular)
 }
 
 extension Color {

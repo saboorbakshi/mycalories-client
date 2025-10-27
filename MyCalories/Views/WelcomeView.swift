@@ -13,9 +13,10 @@ struct WelcomeView: View {
     var body: some View {
         VStack {
             Text("Calorie tracking made easy")
-                .font(Font.heading)
+                .font(Font.questionTitle)
         }
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
+        .padding()
         .safeAreaInset(edge: .bottom) {
             PrimaryButton(label: "Get Started") {
                 router.navigateToGender()

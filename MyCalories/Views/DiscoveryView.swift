@@ -8,11 +8,33 @@
 import SwiftUI
 
 struct DiscoveryView: View {
+    @Environment(Router.self) var router
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        OnboardingQuestionView(
+            title: "Where did you hear about us?",
+            onBack: { router.pop() }
+        ) {
+            OptionButton(label: "Instagram") {
+                router.navigateToTrialHistory()
+            }
+            OptionButton(label: "TikTok") {
+                router.navigateToTrialHistory()
+            }
+            OptionButton(label: "Friends and Family") {
+                router.navigateToTrialHistory()
+            }
+            OptionButton(label: "Facebook") {
+                router.navigateToTrialHistory()
+            }
+            OptionButton(label: "YouTube") {
+                router.navigateToTrialHistory()
+            }
+        }
     }
 }
 
 #Preview {
     DiscoveryView()
+        .withRouter()
 }

@@ -11,32 +11,17 @@ struct TrialHistoryView: View {
     @Environment(Router.self) var router
     
     var body: some View {
-        VStack(alignment: .leading, spacing: 8) {
-            Text("Have you tired other calories tracking apps before?")
-                .font(.heading)
-            
-            Spacer()
-        }
-        .padding(.top)
-        .padding(.horizontal)
-        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
-        .safeAreaInset(edge: .bottom) {
-            VStack {
-                OptionButton(label: "Yes", icon: .systemName("hand.thumbsup.fill"), color: Color.green) {
-                    router.navigateToTrialHistory()
-                }
-                OptionButton(label: "No", icon: .systemName("hand.thumbsdown.fill"), color: Color.red) {
-                    router.navigateToTrialHistory()
-                }
+        OnboardingQuestionView(
+            title: "Have you tried other calories tracking apps before?",
+            onBack: { router.pop() }
+        ) {
+            OptionButton(label: "Yes", icon: .shape(AnyShape(ThumbUp())), color: Color.green) {
+                router.navigateToLongTermResults()
             }
-            .padding(.horizontal)
-        }
-        .safeAreaInset(edge: .top) {
-            OnboardingToolbar {
-                router.pop()
+            OptionButton(label: "No", icon: .shape(AnyShape(ThumbDown())), color: Color.red) {
+                router.navigateToLongTermResults()
             }
         }
-        .toolbarVisibility(.hidden)
     }
 }
 

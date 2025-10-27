@@ -42,7 +42,7 @@ struct OptionButton: View {
 
     var body: some View {
         Button(action: action) {
-            HStack(spacing: Constants.Spacing.optionButton) {
+            HStack(spacing: 0) {
                 if let icon = icon {
                     ZStack {
                         switch icon {
@@ -67,6 +67,7 @@ struct OptionButton: View {
                 Text(label)
                     .font(Font.optionButton)
                     .foregroundColor(.foreground)
+                    .padding(.horizontal, Constants.Padding.optionButton)
             }
             .padding(Constants.Padding.optionButton)
             .frame(maxWidth: .infinity, minHeight: 70, alignment: .leading)
