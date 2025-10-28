@@ -26,7 +26,6 @@ struct AppButton: View {
                 .background(backgroundColor)
                 .foregroundColor(foregroundColor)
                 .cornerRadius(Constants.Radius.full)
-                .padding(.horizontal)
         }
         .buttonStyle(ScaleButtonStyle())
     }

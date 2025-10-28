@@ -25,6 +25,7 @@ struct HeightAndWeightView: View {
                 Picker("Height", selection: $selectedHeight) {
                     ForEach(heights, id: \.self) { height in
                         Text("\(height) cm").tag(height)
+                            .font(.picker)
                     }
                 }
                 .pickerStyle(.wheel)
@@ -32,6 +33,7 @@ struct HeightAndWeightView: View {
                 Picker("Weight", selection: $selectedWeight) {
                     ForEach(weights, id: \.self) { weight in
                         Text("\(weight) kg").tag(weight)
+                            .font(.picker)
                     }
                 }
                 .pickerStyle(.wheel)

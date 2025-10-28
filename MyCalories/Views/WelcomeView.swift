@@ -26,6 +26,7 @@ struct WelcomeView: View {
                     router.navigateToGender()
                 }
             }
+            .padding(.horizontal)
         }
     }
 }

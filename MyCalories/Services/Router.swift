@@ -108,22 +108,22 @@ class Router {
 
 
 enum Route {
-    case gender
-    case numWorkouts
-    case discovery
-    case trialHistory
-    case longTermResults
-    case heightAndWeight
-    case dateOfBirth
-    case goal
-    case targetWeight
-    case notHardAtAll
-    case pace
-    case obstacle
-    case potential
-    case thankYou
-    case rating
-    case notifications
+    case gender //
+    case numWorkouts //
+    case discovery //
+    case trialHistory //
+    case longTermResults // 4
+    case heightAndWeight //
+    case dateOfBirth //
+    case goal //
+    case targetWeight // 1
+    case notHardAtAll  // 2
+    case pace // 3
+    case obstacle //
+    case potential // 5
+    case thankYou // 6
+    case rating // 7
+    case notifications // 8
     case generatePlan
     case settingUpPlan
     case planDetails

@@ -13,16 +13,15 @@ struct OnboardingToolbar: View {
     var body: some View {
         HStack {
             Button(action: onBackTap) {
-                Image(systemName: "chevron.left")
+                Text("Back")
             }
             .font(Font.icon)
-            .foregroundColor(.foregroundPrimary)
-            .frame(width: Constants.Size.iconButton, height: Constants.Size.iconButton)
-            .background(
-                Circle()
-                    .fill(.backgroundSecondary)
-            )
-
+            .padding(.horizontal, Constants.Padding.iconButtonTextInset)
+            .foregroundColor(.foregroundSecondary)
+            .frame(height: Constants.Size.iconButton)
+            .background(.backgroundSecondary)
+            .cornerRadius(Constants.Radius.full)
+            
             Spacer()
         }
         .padding(.horizontal)

@@ -33,6 +33,7 @@ struct DateOfBirthView: View {
                 Picker("Day", selection: $selectedDay) {
                     ForEach(days, id: \.self) { day in
                         Text("\(day)").tag(day)
+                            .font(.picker)
                     }
                 }
                 .pickerStyle(.wheel)
@@ -41,6 +42,7 @@ struct DateOfBirthView: View {
                 Picker("Month", selection: $selectedMonth) {
                     ForEach(months, id: \.0) { month in
                         Text(month.1).tag(month.0)
+                            .font(.picker)
                     }
                 }
                 .pickerStyle(.wheel)
@@ -49,6 +51,7 @@ struct DateOfBirthView: View {
                 Picker("Year", selection: $selectedYear) {
                     ForEach(years, id: \.self) { year in
                         Text("\(year)").tag(year)
+                            .font(.picker)
                     }
                 }
                 .pickerStyle(.wheel)

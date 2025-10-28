@@ -23,8 +23,9 @@ enum Constants {
     }
     
     enum Padding {
-        static let optionButtonShapeInset: CGFloat = 12
-        static let optionButton: CGFloat = 12
+        static let iconButtonTextInset: CGFloat = 12
+        static let optionButtonShapeInset: CGFloat = 14
+        static let optionButton: CGFloat = 10
     }
     
     enum Radius {
@@ -39,14 +40,16 @@ enum Constants {
     
     enum Size {
         static let optionButtonShape: CGFloat = 22
-        static let iconButton: CGFloat = 42
+        static let iconButton: CGFloat = 40
     }
 }
 
 extension Font {
     static let icon = Font.system(size: 16, weight: Font.Weight.medium)
-    static let button = Font.system(size: 18, weight: Font.Weight.medium)
-    static let optionButton = Font.system(size: 18, weight: Font.Weight.medium)
-    static let questionTitle = Font.system(size: 34, weight: Font.Weight.bold)
-    static let questionSubtitle = Font.system(size: 18, weight: Font.Weight.regular)
+    static let picker = Font.custom("SuisseIntl-Regular", size: 19)
+    static let button = Font.custom("SuisseIntl-Medium", size: 17)
+    static let optionButton = Font.custom("SuisseIntl-Regular", size: 17)
+    static let questionTitle = Font.custom("SuisseIntl-SemiBold", size: 32)
+    static let questionSubtitle = Font.custom("SuisseIntl-Regular", size: 17)
+    static let pickerUnit = Font.custom("SuisseIntl-Medium", size: 20)
 }
