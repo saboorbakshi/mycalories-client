@@ -34,7 +34,7 @@ struct TargetWeightView: View {
                 .padding(.bottom, Constants.Spacing.large)
             
             AppButton(label: "Continue", type: .primary) {
-                router.navigateToDateOfBirth()
+                router.navigateToRealisticTarget()
             }
         }
     }

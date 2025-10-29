@@ -49,8 +49,8 @@ class Router {
         path.append(Route.targetWeight)
     }
     
-    func navigateToNotHardAtAll() {
-        path.append(Route.notHardAtAll)
+    func navigateToRealisticTarget() {
+        path.append(Route.realisticTarget)
     }
     
     func navigateToPace() {
@@ -116,8 +116,8 @@ enum Route {
     case heightAndWeight //
     case dateOfBirth //
     case goal //
-    case targetWeight // 1
-    case notHardAtAll  // 2
+    case targetWeight //
+    case realisticTarget  // 2
     case pace // 3
     case obstacle //
     case potential // 5

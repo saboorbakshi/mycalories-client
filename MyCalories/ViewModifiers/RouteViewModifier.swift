@@ -32,8 +32,8 @@ struct RouteViewModifier: ViewModifier {
                 GoalView()
             case .targetWeight:
                 TargetWeightView()
-            case .notHardAtAll:
-                NotHardAtAllView()
+            case .realisticTarget:
+                RealisticTargetView()
             case .pace:
                 PaceView()
             case .obstacle:
