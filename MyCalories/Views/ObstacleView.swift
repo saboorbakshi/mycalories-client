@@ -16,19 +16,19 @@ struct ObstacleView: View {
             onBack: { router.pop() }
         ) {
             OptionButton(label: "Lack of consistency", icon: .shape(AnyShape(Statistics())), color: .purple) {
-                router.navigateToPotential()
+                router.navigateToAccomplish()
             }
             OptionButton(label: "Unhealthy eating habits", icon: .shape(AnyShape(Cookie())), color: .brown) {
-                router.navigateToPotential()
+                router.navigateToAccomplish()
             }
             OptionButton(label: "Lack of support", icon: .shape(AnyShape(FistBump())), color: .cyan) {
-                router.navigateToPotential()
+                router.navigateToAccomplish()
             }
             OptionButton(label: "Busy schedule", icon: .shape(AnyShape(CalendarClock())), color: .orange) {
-                router.navigateToPotential()
+                router.navigateToAccomplish()
             }
             OptionButton(label: "Lack of meal inspiration", icon: .shape(AnyShape(FoodBowl())), color: .mint) {
-                router.navigateToPotential()
+                router.navigateToAccomplish()
             }
         }
     }

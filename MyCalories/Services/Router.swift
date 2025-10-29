@@ -41,8 +41,8 @@ class Router {
         path.append(Route.dateOfBirth)
     }
     
-    func navigateToGoal() {
-        path.append(Route.goal)
+    func navigateToWeightGoal() {
+        path.append(Route.weightGoal)
     }
     
     func navigateToTargetWeight() {
@@ -59,6 +59,10 @@ class Router {
     
     func navigateToObstacle() {
         path.append(Route.obstacle)
+    }
+    
+    func navigateToAccomplish() {
+        path.append(Route.accomplish)
     }
     
     func navigateToPotential() {
@@ -112,21 +116,22 @@ enum Route {
     case numWorkouts //
     case discovery //
     case trialHistory //
-    case longTermResults // 4
+    case longTermResults // 1
     case heightAndWeight //
     case dateOfBirth //
-    case goal //
+    case weightGoal //
     case targetWeight //
-    case realisticTarget  // 2
-    case pace // 3
+    case realisticTarget  //
+    case pace //
     case obstacle //
-    case potential // 5
-    case thankYou // 6
-    case rating // 7
-    case notifications // 8
-    case generatePlan
-    case settingUpPlan
-    case planDetails
-    case saveProgress
+    case accomplish //
+    case potential // 2
+    case thankYou //
+    case rating // 3
+    case notifications // 4
+    case generatePlan // 5
+    case settingUpPlan // 6
+    case planDetails // 7
+    case saveProgress // 8
     case paywall
 }

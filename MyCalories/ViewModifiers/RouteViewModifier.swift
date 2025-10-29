@@ -28,8 +28,8 @@ struct RouteViewModifier: ViewModifier {
                 HeightAndWeightView()
             case .dateOfBirth:
                 DateOfBirthView()
-            case .goal:
-                GoalView()
+            case .weightGoal:
+                WeightGoalView()
             case .targetWeight:
                 TargetWeightView()
             case .realisticTarget:
@@ -38,6 +38,8 @@ struct RouteViewModifier: ViewModifier {
                 PaceView()
             case .obstacle:
                 ObstacleView()
+            case .accomplish:
+                AccomplishView()
             case .potential:
                 PotentialView()
             case .thankYou:

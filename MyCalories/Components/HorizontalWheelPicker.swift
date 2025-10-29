@@ -50,10 +50,6 @@ struct HorizontalWheelPicker: View {
             .onAppear {
                 if !isLoaded { isLoaded = true }
             }
-            .onChange(of: value) {
-                let generator = UIImpactFeedbackGenerator(style: .light)
-                generator.impactOccurred()
-            }
             .overlay(alignment: .center) {
                 VStack {
                     InvertedTriangle()
@@ -69,7 +65,7 @@ struct HorizontalWheelPicker: View {
                 if !isLoaded { isLoaded = true }
             }
             .onChange(of: value) {
-                let generator = UIImpactFeedbackGenerator(style: .soft)
+                let generator = UIImpactFeedbackGenerator(style: .light)
                 generator.impactOccurred()
             }
         }

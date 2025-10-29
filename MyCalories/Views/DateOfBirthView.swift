@@ -61,7 +61,7 @@ struct DateOfBirthView: View {
             .padding(.bottom, Constants.Padding.large)
             
             AppButton(label: "Continue", type: .primary) {
-                router.navigateToGoal()
+                router.navigateToWeightGoal()
             }
         }
     }

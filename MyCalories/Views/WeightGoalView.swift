@@ -1,5 +1,5 @@
 //
-//  GoalView.swift
+//  WeightGoalView.swift
 //  MyCalories
 //
 //  Created by Saboor Bakshi on 2025-10-27.
@@ -10,7 +10,7 @@ import SwiftUI
 // <0x1142292c0> Gesture: System gesture gate timed out due to SFSymbol use
 // Probably something to do with ScaleButtonStyle
 
-struct GoalView: View {
+struct WeightGoalView: View {
     @Environment(Router.self) var router
     
     var body: some View {
@@ -33,6 +33,6 @@ struct GoalView: View {
 }
 
 #Preview {
-    GoalView()
+    WeightGoalView()
         .withRouter()
 }
