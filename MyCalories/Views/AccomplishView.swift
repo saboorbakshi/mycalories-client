@@ -25,7 +25,7 @@ struct AccomplishView: View {
             OptionButton(label: "Stay motivated and consistent", icon: .shape(AnyShape(Flash())), color: Color.cyan) {
                 router.navigateToPotential()
             }
-            OptionButton(label: "Feel better about my body", icon: .shape(AnyShape(Laurel())), color: Color.mint) {
+            OptionButton(label: "Feel better about my body", icon: .shape(AnyShape(Laurel())), color: Color.green) {
                 router.navigateToPotential()
             }
         }

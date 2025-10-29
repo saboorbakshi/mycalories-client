@@ -41,7 +41,7 @@ struct ThankYouView: View {
             Text("""
                 for trusting
                 us. Let's personalize
-                MyCalories for you
+                MyCalories for you.
                 """)
         }
         .font(Font.questionTitle)

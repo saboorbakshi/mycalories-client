@@ -11,16 +11,57 @@ struct GeneratePlanView: View {
     @Environment(Router.self) var router
     
     var body: some View {
-        OnboardingQuestionView(
-            title: "Time to generate your custom plan",
-            onBack: { router.pop() }
-        ) {
+        VStack(spacing: Constants.Spacing.large) {
+            titleView
+            subtitleView
+        }
+        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
+        .padding(.horizontal)
+        .safeAreaInset(edge: .bottom) {
             AppButton(label: "Continue", type: .primary) {
-                router.navigateToSettingUpPlan()
+                router.navigateToRating()
+            }
+            .padding(.horizontal)
+        }
+        .safeAreaInset(edge: .top) {
+            OnboardingToolbar {
+                router.pop()
             }
         }
+        .toolbarVisibility(.hidden)
+    }
+    
+    // MARK: - Components
+    
+    private var titleView: some View {
+        Group {
+            Text("""
+                All done!
+                Time to generate
+                your 
+                """)
+            +
+            Text("custom plan.")
+                .foregroundColor(.red)
+        }
+        .font(Font.questionTitle)
+        .foregroundColor(.foregroundPrimary)
+        .multilineTextAlignment(.center)
+    }
+    
+    private var subtitleView: some View {
+        Text("""
+            Great job. You have completed all the 
+            steps. It is now time to see your 
+            personalized results.
+            """)
+            .font(Font.questionSubtitle)
+            .foregroundColor(.foregroundSecondary)
+            .multilineTextAlignment(.center)
+            .padding(.horizontal)
     }
 }
+
 #Preview {
     GeneratePlanView()
         .withRouter()

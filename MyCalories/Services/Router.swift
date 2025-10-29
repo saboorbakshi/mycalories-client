@@ -129,9 +129,9 @@ enum Route {
     case thankYou //
     case rating // 3
     case notifications // 4
-    case generatePlan // 5
-    case settingUpPlan // 6
-    case planDetails // 7
-    case saveProgress // 8
-    case paywall
+    case generatePlan
+    case settingUpPlan // 5
+    case planDetails // 6
+    case saveProgress // 7
+    case paywall // 8
 }

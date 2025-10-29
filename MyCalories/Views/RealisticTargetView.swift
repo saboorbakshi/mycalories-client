@@ -58,8 +58,7 @@ struct RealisticTargetView: View {
                 is a
                 realistic target. It's not
                 hard at all!
-                """
-                )
+                """)
         }
         .font(Font.questionTitle)
         .foregroundColor(.foregroundPrimary)
@@ -71,8 +70,7 @@ struct RealisticTargetView: View {
             90% of users say that the change is 
             obvious after using MyCalories and it is
             not easy to rebound.
-            """
-            )
+            """)
             .font(Font.questionSubtitle)
             .foregroundColor(.foregroundSecondary)
             .multilineTextAlignment(.center)
