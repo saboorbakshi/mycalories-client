@@ -8,11 +8,61 @@
 import SwiftUI
 
 struct ThankYouView: View {
+    @Environment(Router.self) var router
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack(spacing: Constants.Spacing.large) {
+            titleView
+            subtitleView
+        }
+        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
+        .padding(.horizontal)
+        .safeAreaInset(edge: .bottom) {
+            AppButton(label: "Continue", type: .primary) {
+                router.navigateToRating()
+            }
+            .padding(.horizontal)
+        }
+        .safeAreaInset(edge: .top) {
+            OnboardingToolbar {
+                router.pop()
+            }
+        }
+        .toolbarVisibility(.hidden)
+    }
+    
+    // MARK: - Components
+    
+    private var titleView: some View {
+        Group {
+            Text("Thank you ")
+            .foregroundColor(.blue)
+            +
+            Text("""
+                for trusting
+                us. Let's personalize
+                MyCalories for you
+                """)
+        }
+        .font(Font.questionTitle)
+        .foregroundColor(.foregroundPrimary)
+        .multilineTextAlignment(.center)
+    }
+    
+    private var subtitleView: some View {
+        Text("""
+            Your privacy and security matter to 
+            us. We promise to keep your personal
+            information private and secure.
+            """)
+            .font(Font.questionSubtitle)
+            .foregroundColor(.foregroundSecondary)
+            .multilineTextAlignment(.center)
+            .padding(.horizontal)
     }
 }
 
 #Preview {
     ThankYouView()
+        .withRouter()
 }

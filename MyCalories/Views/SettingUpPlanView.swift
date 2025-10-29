@@ -8,11 +8,21 @@
 import SwiftUI
 
 struct SettingUpPlanView: View {
+    @Environment(Router.self) var router
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        OnboardingQuestionView(
+            title: "We are setting everything up for you",
+            onBack: { router.pop() }
+        ) {
+            AppButton(label: "Continue", type: .primary) {
+                router.navigateToPlanDetails()
+            }
+        }
     }
 }
 
 #Preview {
     SettingUpPlanView()
+        .withRouter()
 }

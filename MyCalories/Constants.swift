@@ -13,12 +13,15 @@ enum Position {
 }
 
 enum Constants {
+    static let appName = "MyCalories"
+    
     enum Messages {
         static let customPlan = "This will be used to calibrate your custom plan."
     }
     
     enum Spacing {
         static let small: CGFloat = 8
+        static let medium: CGFloat = 16
         static let large: CGFloat = 24
     }
     
@@ -26,11 +29,13 @@ enum Constants {
         static let iconButtonTextInset: CGFloat = 12
         static let optionButtonShapeInset: CGFloat = 14
         static let optionButton: CGFloat = 10
+        static let large: CGFloat = 24
     }
     
     enum Radius {
         static let full: CGFloat = 999
         static let medium: CGFloat = 16
+        static let large: CGFloat = 24
     }
     
     enum Height {
@@ -45,7 +50,7 @@ enum Constants {
 }
 
 extension Font {
-    static let tiny = Font.system(size: 12, weight: Font.Weight.regular)
+    static let tiny = Font.custom("SuisseIntl-Regular", size: 14)
     static let icon = Font.system(size: 16, weight: Font.Weight.medium)
     static let picker = Font.custom("SuisseIntl-Regular", size: 19)
     static let button = Font.custom("SuisseIntl-Medium", size: 17)

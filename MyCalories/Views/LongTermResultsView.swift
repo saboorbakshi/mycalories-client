@@ -8,11 +8,22 @@
 import SwiftUI
 
 struct LongTermResultsView: View {
+    @Environment(Router.self) var router
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        OnboardingQuestionView(
+            title: "MyCalories creates long term results",
+            onBack: { router.pop() }
+        ) {
+            AppButton(label: "Continue", type: .primary) {
+                router.navigateToHeightAndWeight()
+            }
+        }
     }
 }
 
 #Preview {
     LongTermResultsView()
+        .withRouter()
 }
+

@@ -58,7 +58,7 @@ struct DateOfBirthView: View {
                 .environment(\.locale, Locale(identifier: "en_US_POSIX"))
             }
             .frame(height: Constants.Height.wheelPicker)
-            .padding(.bottom, Constants.Spacing.large)
+            .padding(.bottom, Constants.Padding.large)
             
             AppButton(label: "Continue", type: .primary) {
                 router.navigateToGoal()

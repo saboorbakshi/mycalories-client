@@ -39,7 +39,7 @@ struct HeightAndWeightView: View {
                 .pickerStyle(.wheel)
             }
             .frame(height: Constants.Height.wheelPicker)
-            .padding(.bottom, Constants.Spacing.large)
+            .padding(.bottom, Constants.Padding.large)
             
             AppButton(label: "Continue", type: .primary) {
                 router.navigateToDateOfBirth()

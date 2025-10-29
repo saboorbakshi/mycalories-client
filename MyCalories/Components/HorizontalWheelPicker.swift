@@ -69,7 +69,7 @@ struct HorizontalWheelPicker: View {
                 if !isLoaded { isLoaded = true }
             }
             .onChange(of: value) {
-                let generator = UIImpactFeedbackGenerator(style: .light)
+                let generator = UIImpactFeedbackGenerator(style: .soft)
                 generator.impactOccurred()
             }
         }

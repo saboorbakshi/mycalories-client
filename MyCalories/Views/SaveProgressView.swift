@@ -8,11 +8,21 @@
 import SwiftUI
 
 struct SaveProgressView: View {
+    @Environment(Router.self) var router
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        OnboardingQuestionView(
+            title: "Save your progress",
+            onBack: { router.pop() }
+        ) {
+            AppButton(label: "Sign in with Apple", type: .primary) {
+                router.navigateToPaywall()
+            }
+        }
     }
 }
 
 #Preview {
     SaveProgressView()
+        .withRouter()
 }

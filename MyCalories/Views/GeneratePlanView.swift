@@ -8,11 +8,20 @@
 import SwiftUI
 
 struct GeneratePlanView: View {
+    @Environment(Router.self) var router
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        OnboardingQuestionView(
+            title: "Time to generate your custom plan",
+            onBack: { router.pop() }
+        ) {
+            AppButton(label: "Continue", type: .primary) {
+                router.navigateToSettingUpPlan()
+            }
+        }
     }
 }
-
 #Preview {
     GeneratePlanView()
+        .withRouter()
 }

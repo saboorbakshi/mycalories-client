@@ -54,8 +54,7 @@ struct OptionButton: View {
 
                         case .systemName(let systemName):
                             Image(systemName: systemName)
-                                .frame(width: Constants.Size.optionButtonShape,
-                                       height: Constants.Size.optionButtonShape)
+                                .font(.system(size: Constants.Size.optionButtonShape * 0.9, weight: .medium))
                                 .foregroundColor(color!)
                         }
                     }

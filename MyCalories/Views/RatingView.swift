@@ -8,11 +8,21 @@
 import SwiftUI
 
 struct RatingView: View {
+    @Environment(Router.self) var router
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        OnboardingQuestionView(
+            title: "Give us a rating",
+            onBack: { router.pop() }
+        ) {
+            AppButton(label: "Continue", type: .primary) {
+                router.navigateToNotifications()
+            }
+        }
     }
 }
 
 #Preview {
     RatingView()
+        .withRouter()
 }

@@ -12,10 +12,15 @@ struct WelcomeView: View {
     
     var body: some View {
         VStack {
-            Text("Calorie tracking made easy")
+            Text("""
+                Calorie tracking
+                made easy
+                """
+                )
                 .font(Font.questionTitle)
+                .multilineTextAlignment(.center)
         }
-        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
+        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
         .padding()
         .safeAreaInset(edge: .bottom) {
             VStack {

@@ -8,11 +8,21 @@
 import SwiftUI
 
 struct PotentialView: View {
+    @Environment(Router.self) var router
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        OnboardingQuestionView(
+            title: "You have great potential to crush your goal",
+            onBack: { router.pop() }
+        ) {
+            AppButton(label: "Continue", type: .primary) {
+                router.navigateToThankYou()
+            }
+        }
     }
 }
 
 #Preview {
     PotentialView()
+        .withRouter()
 }

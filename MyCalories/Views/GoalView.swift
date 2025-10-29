@@ -7,6 +7,9 @@
 
 import SwiftUI
 
+// <0x1142292c0> Gesture: System gesture gate timed out due to SFSymbol use
+// Probably something to do with ScaleButtonStyle
+
 struct GoalView: View {
     @Environment(Router.self) var router
     
@@ -16,13 +19,13 @@ struct GoalView: View {
             subtitle: "This helps us generate a plan for your calorie intake.",
             onBack: { router.pop() }
         ) {
-            OptionButton(label: "Lose weight", icon: .shape(AnyShape(ArrowDown())), color: .green) {
+            OptionButton(label: "Lose weight", icon: .systemName("chart.line.downtrend.xyaxis"), color: .green) {
                 router.navigateToTargetWeight()
             }
-            OptionButton(label: "Maintain weight", icon: .shape(AnyShape(ArrowRight())), color: .blue) {
+            OptionButton(label: "Maintain weight", icon: .systemName("chart.line.flattrend.xyaxis"), color: .blue) {
                 router.navigateToTargetWeight()
             }
-            OptionButton(label: "Gain weight", icon: .shape(AnyShape(ArrowUp())), color: .red) {
+            OptionButton(label: "Gain weight", icon: .systemName("chart.line.uptrend.xyaxis"), color: .red) {
                 router.navigateToTargetWeight()
             }
         }
