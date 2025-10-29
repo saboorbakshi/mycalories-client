@@ -19,7 +19,7 @@ struct GeneratePlanView: View {
         .padding(.horizontal)
         .safeAreaInset(edge: .bottom) {
             AppButton(label: "Continue", type: .primary) {
-                router.navigateToRating()
+                router.navigateToSettingUpPlan()
             }
             .padding(.horizontal)
         }
