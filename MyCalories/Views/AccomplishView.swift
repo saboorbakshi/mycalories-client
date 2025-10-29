@@ -14,6 +14,7 @@ struct AccomplishView: View {
         OnboardingQuestionView(
             title: "What would you like to accomplish?",
             subtitle: Constants.Messages.customPlan,
+            filledCount: 13,
             onBack: { router.pop() }
         ) {
             OptionButton(label: "Eat and live healthier", icon: .shape(AnyShape(Steak())), color: Color.red) {

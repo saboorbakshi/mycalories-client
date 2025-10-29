@@ -13,6 +13,7 @@ struct ObstacleView: View {
     var body: some View {
         OnboardingQuestionView(
             title: "What's stopping you from reaching your goals?",
+            filledCount: 12,
             onBack: { router.pop() }
         ) {
             OptionButton(label: "Lack of consistency", icon: .shape(AnyShape(Statistics())), color: .purple) {

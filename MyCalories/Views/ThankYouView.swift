@@ -24,7 +24,7 @@ struct ThankYouView: View {
             .padding(.horizontal)
         }
         .safeAreaInset(edge: .top) {
-            OnboardingToolbar {
+            OnboardingToolbar(filledCount: 15) {
                 router.pop()
             }
         }

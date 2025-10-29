@@ -24,7 +24,7 @@ struct GeneratePlanView: View {
             .padding(.horizontal)
         }
         .safeAreaInset(edge: .top) {
-            OnboardingToolbar {
+            OnboardingToolbar(filledCount: 18) {
                 router.pop()
             }
         }

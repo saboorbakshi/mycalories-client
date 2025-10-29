@@ -13,6 +13,7 @@ struct SaveProgressView: View {
     var body: some View {
         OnboardingQuestionView(
             title: "Save your progress",
+            filledCount: 20,
             onBack: { router.pop() }
         ) {
             AppButton(label: "Sign in with Apple", type: .primary) {

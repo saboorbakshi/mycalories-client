@@ -14,6 +14,7 @@ struct NumWorkoutsView: View {
         OnboardingQuestionView(
             title: "How many workouts do you do per week?",
             subtitle: "This will be used to calibrate your custom plan.",
+            filledCount: 2,
             onBack: { router.pop() }
         ) {
             OptionButton(label: "0-2", icon: .shape(AnyShape(OneDot())), color: .red) {

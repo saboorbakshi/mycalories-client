@@ -38,7 +38,7 @@ struct RealisticTargetView: View {
             .padding(.horizontal)
         }
         .safeAreaInset(edge: .top) {
-            OnboardingToolbar {
+            OnboardingToolbar(filledCount: 10) {
                 router.pop()
             }
         }

@@ -13,6 +13,7 @@ struct LongTermResultsView: View {
     var body: some View {
         OnboardingQuestionView(
             title: "MyCalories creates long term results",
+            filledCount: 5,
             onBack: { router.pop() }
         ) {
             AppButton(label: "Continue", type: .primary) {

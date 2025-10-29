@@ -10,6 +10,7 @@ import SwiftUI
 struct OnboardingQuestionView<Content: View>: View {
     let title: String
     let subtitle: String?
+    let filledCount: Int
     let onBack: () -> Void
     @ViewBuilder let content: Content
     
@@ -17,11 +18,13 @@ struct OnboardingQuestionView<Content: View>: View {
     init(
         title: String,
         subtitle: String? = nil,
+        filledCount: Int,
         onBack: @escaping () -> Void,
         @ViewBuilder content: () -> Content
     ) {
         self.title = title
         self.subtitle = subtitle
+        self.filledCount = filledCount
         self.onBack = onBack
         self.content = content()
     }
@@ -49,7 +52,7 @@ struct OnboardingQuestionView<Content: View>: View {
             .padding(.horizontal)
         }
         .safeAreaInset(edge: .top) {
-            OnboardingToolbar {
+            OnboardingToolbar(filledCount: filledCount) {
                 onBack()
             }
         }

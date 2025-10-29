@@ -17,6 +17,7 @@ struct WeightGoalView: View {
         OnboardingQuestionView(
             title: "What is your goal?",
             subtitle: "This helps us generate a plan for your calorie intake.",
+            filledCount: 8,
             onBack: { router.pop() }
         ) {
             OptionButton(label: "Lose weight", icon: .systemName("chart.line.downtrend.xyaxis"), color: .green) {

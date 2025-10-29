@@ -14,6 +14,7 @@ struct GenderView: View {
         OnboardingQuestionView(
             title: "Choose your gender",
             subtitle: Constants.Messages.customPlan,
+            filledCount: 1,
             onBack: { router.pop() }
         ) {
             OptionButton(label: "Male", icon: .shape(AnyShape(Male())), color: Color.blue) {

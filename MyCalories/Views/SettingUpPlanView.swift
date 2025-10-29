@@ -13,6 +13,7 @@ struct SettingUpPlanView: View {
     var body: some View {
         OnboardingQuestionView(
             title: "We are setting everything up for you",
+            filledCount: 1,
             onBack: { router.pop() }
         ) {
             AppButton(label: "Continue", type: .primary) {

@@ -13,6 +13,7 @@ struct TrialHistoryView: View {
     var body: some View {
         OnboardingQuestionView(
             title: "Have you tried other calories tracking apps before?",
+            filledCount: 4,
             onBack: { router.pop() }
         ) {
             OptionButton(label: "Yes", icon: .shape(AnyShape(ThumbUp())), color: Color.green) {

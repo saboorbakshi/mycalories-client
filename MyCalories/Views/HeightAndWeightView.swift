@@ -19,6 +19,7 @@ struct HeightAndWeightView: View {
         OnboardingQuestionView(
             title: "What is your height and weight?",
             subtitle: Constants.Messages.customPlan,
+            filledCount: 6,
             onBack: { router.pop() }
         ) {
             HStack {

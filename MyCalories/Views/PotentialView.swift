@@ -13,6 +13,7 @@ struct PotentialView: View {
     var body: some View {
         OnboardingQuestionView(
             title: "You have great potential to crush your goal",
+            filledCount: 14,
             onBack: { router.pop() }
         ) {
             AppButton(label: "Continue", type: .primary) {

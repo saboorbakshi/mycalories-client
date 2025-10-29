@@ -20,6 +20,7 @@ struct TargetWeightView: View {
         OnboardingQuestionView(
             title: "What is your desired weight?",
             subtitle: Constants.Messages.customPlan,
+            filledCount: 9,
             onBack: { router.pop() }
         ) {
             HStack(alignment: .lastTextBaseline, spacing: 4) {

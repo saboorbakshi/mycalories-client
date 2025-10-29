@@ -13,6 +13,7 @@ struct PlanDetailsView: View {
     var body: some View {
         OnboardingQuestionView(
             title: "Congratulations! Your custom plan is ready",
+            filledCount: 19,
             onBack: { router.pop() }
         ) {
             AppButton(label: "Continue", type: .primary) {

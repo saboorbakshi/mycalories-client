@@ -26,6 +26,7 @@ struct DateOfBirthView: View {
         OnboardingQuestionView(
             title: "What is your date of birth?",
             subtitle: Constants.Messages.customPlan,
+            filledCount: 7,
             onBack: { router.pop() }
         ) {
             HStack {

@@ -13,6 +13,7 @@ struct RatingView: View {
     var body: some View {
         OnboardingQuestionView(
             title: "Give us a rating",
+            filledCount: 16,
             onBack: { router.pop() }
         ) {
             AppButton(label: "Continue", type: .primary) {

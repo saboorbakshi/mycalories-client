@@ -40,6 +40,7 @@ struct PaceView: View {
     var body: some View {
         OnboardingQuestionView(
             title: "How fast do you want to reach your goal?",
+            filledCount: 11,
             onBack: { router.pop() }
         ) {
             VStack {

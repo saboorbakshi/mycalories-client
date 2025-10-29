@@ -13,6 +13,7 @@ struct DiscoveryView: View {
     var body: some View {
         OnboardingQuestionView(
             title: "Where did you hear about us?",
+            filledCount: 3,
             onBack: { router.pop() }
         ) {
             OptionButton(label: "App Store") {

@@ -13,6 +13,7 @@ struct NotificationsView: View {
     var body: some View {
         OnboardingQuestionView(
             title: "Reach your goals with notifications",
+            filledCount: 17,
             onBack: { router.pop() }
         ) {
             AppButton(label: "Continue", type: .primary) {
