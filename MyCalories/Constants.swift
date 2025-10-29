@@ -45,6 +45,7 @@ enum Constants {
 }
 
 extension Font {
+    static let tiny = Font.system(size: 12, weight: Font.Weight.regular)
     static let icon = Font.system(size: 16, weight: Font.Weight.medium)
     static let picker = Font.custom("SuisseIntl-Regular", size: 19)
     static let button = Font.custom("SuisseIntl-Medium", size: 17)

@@ -10,8 +10,9 @@ import SwiftUI
 struct TargetWeightView: View {
     @Environment(Router.self) var router
     
-    @State private var config = HorizontalWheelPicker.Config(count: 30)
-    @State private var value: CGFloat = 70
+    @State private var targetWeight: CGFloat = 70
+    @State private var config = HorizontalWheelPicker.Config(count: 200, steps: 10,
+                                                             spacing: 10, multiplier: 1)
     
     let weights = Array(40...200)
     
@@ -21,19 +22,15 @@ struct TargetWeightView: View {
             subtitle: Constants.Messages.customPlan,
             onBack: { router.pop() }
         ) {
-            HStack(alignment: .lastTextBaseline, spacing: 4, content: {
-                Text (verbatim: "\(value)")
+            HStack(alignment: .lastTextBaseline, spacing: 4) {
+                Text ("\(targetWeight, specifier: "%.1f")")
                     .font(.questionTitle)
-                    .contentTransition(.numericText(value: value))
-                    .animation(.snappy, value: value)
                 Text ("kg")
                     .font(.pickerUnit)
-                    .textScale(.secondary)
-                    .foregroundStyle(.gray)
-            })
-                
+                    .foregroundStyle(.foregroundSecondary)
+            }
             
-            HorizontalWheelPicker(config: config, value: $value)
+            HorizontalWheelPicker(config: config, value: $targetWeight)
                 .padding(.bottom, Constants.Spacing.large)
             
             AppButton(label: "Continue", type: .primary) {

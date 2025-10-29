@@ -25,18 +25,16 @@ struct HorizontalWheelPicker: View {
                     ForEach(0...totalSteps, id: \.self) { index in
                         let remainder = index % config.steps
                         let isMainDivider = remainder == 0
-                        let dividerHeight: CGFloat = isMainDivider ? 200 : 20
+                        let dividerHeight: CGFloat = isMainDivider ? 35 : 20
                         
                         Divider()
-                            .background(isMainDivider ? Color.primary : Color.gray)
-                            .frame(width: 0, height: dividerHeight, alignment: .bottom)
+                            .frame(width: 0, height: dividerHeight, alignment: .center)
                             .frame(maxHeight: 20, alignment: .bottom)
                             .overlay(alignment: .bottom) {
                                 if isMainDivider && config.showsText {
                                     Text("\((index / config.steps) * config.multiplier)")
-                                        .font(.caption)
-                                        .fontWeight(.medium)
-                                        .textScale(.secondary)
+                                        .font(.tiny)
+                                        .foregroundColor(.foregroundSecondary)
                                         .fixedSize()
                                         .offset(y: 20)
                                 }
@@ -49,17 +47,35 @@ struct HorizontalWheelPicker: View {
             .scrollIndicators(.hidden)
             .scrollTargetBehavior(.viewAligned)
             .scrollPosition(id: scrollPositionBinding)
+            .onAppear {
+                if !isLoaded { isLoaded = true }
+            }
+            .onChange(of: value) {
+                let generator = UIImpactFeedbackGenerator(style: .light)
+                generator.impactOccurred()
+            }
             .overlay(alignment: .center) {
-                Rectangle()
-                    .frame(width: 1, height: 40)
-                    .padding(.bottom, 20)
+                VStack {
+                    InvertedTriangle()
+                        .frame(width: 16, height: 12)
+                    
+                    Rectangle()
+                        .frame(width: 1, height: 50)
+                        .padding(.bottom, 50)  // experiment
+                }
             }
             .safeAreaPadding(.horizontal, horizontalPadding)
             .onAppear {
                 if !isLoaded { isLoaded = true }
             }
+            .onChange(of: value) {
+                let generator = UIImpactFeedbackGenerator(style: .light)
+                generator.impactOccurred()
+            }
         }
-        .frame(height: 60)
+        .frame(height: 60, alignment: .center)  // experiment with .background(.red)
+        .padding(.top, 30)  // experiment with .background(.red)
+        .horizontalFade()
     }
     
     private var scrollPositionBinding: Binding<Int?> {
@@ -74,19 +90,29 @@ struct HorizontalWheelPicker: View {
             }
         )
     }
+    
+    private struct InvertedTriangle: Shape {
+        func path(in rect: CGRect) -> Path {
+            var path = Path()
+            path.move(to: CGPoint(x: rect.minX, y: rect.minY))
+            path.addLine(to: CGPoint(x: rect.maxX, y: rect.minY))
+            path.addLine(to: CGPoint(x: rect.midX, y: rect.maxY))
+            path.closeSubpath()
+            return path
+        }
+    }
 
     struct Config: Equatable {
         var count: Int
         var steps: Int = 10
-        var spacing: CGFloat = 10
-        var multiplier: Int = 10
+        var spacing: CGFloat = 8
+        var multiplier: Int = 1
         var showsText: Bool = true
-        
     }
 }
 
 #Preview {
-    @Previewable @State var value: CGFloat = 0
-    let config = HorizontalWheelPicker.Config(count: 30)
+    @Previewable @State var value: CGFloat = 4
+    let config = HorizontalWheelPicker.Config(count: 20)
     HorizontalWheelPicker(config: config, value: $value)
 }
