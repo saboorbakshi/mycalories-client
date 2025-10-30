@@ -11,6 +11,8 @@ import SwiftUI
 struct RouteViewModifier: ViewModifier {
     @State private var router = Router()
     
+    // create fillCount numbers here and next pg navigation too...
+    
     private func routeView(for route: Route) -> some View {
         Group {
             switch route {
@@ -22,8 +24,6 @@ struct RouteViewModifier: ViewModifier {
                 DiscoveryView()
             case .trialHistory:
                 TrialHistoryView()
-            case .longTermResults:
-                LongTermResultsView()
             case .heightAndWeight:
                 HeightAndWeightView()
             case .dateOfBirth:
@@ -36,12 +36,12 @@ struct RouteViewModifier: ViewModifier {
                 RealisticTargetView()
             case .pace:
                 PaceView()
+            case .twiceAsMuch:
+                TwiceAsMuchView()
             case .obstacle:
                 ObstacleView()
             case .accomplish:
                 AccomplishView()
-            case .potential:
-                PotentialView()
             case .thankYou:
                 ThankYouView()
             case .rating:

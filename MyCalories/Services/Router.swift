@@ -29,10 +29,6 @@ class Router {
         path.append(Route.trialHistory)
     }
     
-    func navigateToLongTermResults() {
-        path.append(Route.longTermResults)
-    }
-    
     func navigateToHeightAndWeight() {
         path.append(Route.heightAndWeight)
     }
@@ -57,16 +53,16 @@ class Router {
         path.append(Route.pace)
     }
     
+    func navigateToTwiceAsMuch() {
+        path.append(Route.twiceAsMuch)
+    }
+    
     func navigateToObstacle() {
         path.append(Route.obstacle)
     }
     
     func navigateToAccomplish() {
         path.append(Route.accomplish)
-    }
-    
-    func navigateToPotential() {
-        path.append(Route.potential)
     }
     
     func navigateToThankYou() {
@@ -116,16 +112,15 @@ enum Route {
     case numWorkouts //
     case discovery //
     case trialHistory //
-    case longTermResults // 1
     case heightAndWeight //
     case dateOfBirth //
     case weightGoal //
     case targetWeight //
     case realisticTarget  //
     case pace //
+    case twiceAsMuch // 1
     case obstacle //
     case accomplish //
-    case potential // 2
     case thankYou //
     case rating // 3
     case notifications // 4

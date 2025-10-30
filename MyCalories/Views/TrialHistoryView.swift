@@ -17,10 +17,10 @@ struct TrialHistoryView: View {
             onBack: { router.pop() }
         ) {
             OptionButton(label: "Yes", icon: .shape(AnyShape(ThumbUp())), color: Color.green) {
-                router.navigateToLongTermResults()
+                router.navigateToHeightAndWeight()
             }
             OptionButton(label: "No", icon: .shape(AnyShape(ThumbDown())), color: Color.red) {
-                router.navigateToLongTermResults()
+                router.navigateToHeightAndWeight()
             }
         }
     }

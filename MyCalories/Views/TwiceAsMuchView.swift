@@ -1,18 +1,18 @@
 //
-//  LongTermResultsView.swift
+//  TwiceAsMuchView.swift
 //  MyCalories
 //
-//  Created by Saboor Bakshi on 2025-10-27.
+//  Created by Saboor Bakshi on 2025-10-29.
 //
 
 import SwiftUI
 
-struct LongTermResultsView: View {
+struct TwiceAsMuchView: View {
     @Environment(Router.self) var router
     
     var body: some View {
         OnboardingQuestionView(
-            title: "MyCalories creates long term results",
+            title: "Gain twice as much weight with MyCalories vs on your own",
             filledCount: 5,
             onBack: { router.pop() }
         ) {
@@ -24,7 +24,7 @@ struct LongTermResultsView: View {
 }
 
 #Preview {
-    LongTermResultsView()
+    TwiceAsMuchView()
         .withRouter()
 }
 

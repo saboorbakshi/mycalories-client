@@ -18,16 +18,16 @@ struct AccomplishView: View {
             onBack: { router.pop() }
         ) {
             OptionButton(label: "Eat and live healthier", icon: .shape(AnyShape(Steak())), color: Color.red) {
-                router.navigateToPotential()
+                router.navigateToThankYou()
             }
             OptionButton(label: "Boost my energy and mood", icon: .shape(AnyShape(Star())), color: Color.yellow) {
-                router.navigateToPotential()
+                router.navigateToThankYou()
             }
             OptionButton(label: "Stay motivated and consistent", icon: .shape(AnyShape(Flash())), color: Color.cyan) {
-                router.navigateToPotential()
+                router.navigateToThankYou()
             }
             OptionButton(label: "Feel better about my body", icon: .shape(AnyShape(Laurel())), color: Color.green) {
-                router.navigateToPotential()
+                router.navigateToThankYou()
             }
         }
     }
