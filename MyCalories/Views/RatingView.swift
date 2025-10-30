@@ -11,15 +11,10 @@ struct RatingView: View {
     @Environment(Router.self) var router
     
     var body: some View {
-        OnboardingQuestionView(
+        OnboardingLeadingView(
             title: "Give us a rating",
-            filledCount: 16,
-            onBack: { router.pop() }
-        ) {
-            AppButton(label: "Continue", type: .primary) {
-                router.navigateToNotifications()
-            }
-        }
+            showButton: true
+        ) {}
     }
 }
 

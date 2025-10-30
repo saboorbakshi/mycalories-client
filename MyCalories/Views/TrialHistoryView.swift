@@ -2,31 +2,30 @@
 //  TrialHistoryView.swift
 //  MyCalories
 //
-//  Created by Saboor Bakshi on 2025-10-26.
+//  Created by Saboor Bakshi on 2025-10-30.
 //
 
 import SwiftUI
 
 struct TrialHistoryView: View {
     @Environment(Router.self) var router
+    @Environment(\.currentOnboardingIndex) var currentIndex
     
     var body: some View {
-        OnboardingQuestionView(
-            title: "Have you tried other calories tracking apps before?",
-            filledCount: 4,
-            onBack: { router.pop() }
+        OnboardingLeadingView(
+            title: "Have you tried other calories tracking apps before?"
         ) {
-            OptionButton(label: "Yes", icon: .shape(AnyShape(ThumbUp())), color: Color.green) {
-                router.navigateToHeightAndWeight()
-            }
-            OptionButton(label: "No", icon: .shape(AnyShape(ThumbDown())), color: Color.red) {
-                router.navigateToHeightAndWeight()
+            OptionButtonList(
+                options: [
+                    OptionButtonInfo(label: "Yes", icon: .shape(AnyShape(ThumbUp())), color: .green),
+                    OptionButtonInfo(label: "No", icon: .shape(AnyShape(ThumbDown())), color: .red)
+                ]
+            ) {
+                router.push(OnboardingRoute.allCases[currentIndex + 1])
             }
         }
     }
 }
 
-#Preview {
-    TrialHistoryView()
-        .withRouter()
-}
+
+

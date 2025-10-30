@@ -2,32 +2,27 @@
 //  GenderView.swift
 //  MyCalories
 //
-//  Created by Saboor Bakshi on 2025-10-26.
+//  Created by Saboor Bakshi on 2025-10-30.
 //
 
 import SwiftUI
 
 struct GenderView: View {
     @Environment(Router.self) var router
+    @Environment(\.currentOnboardingIndex) var currentIndex
     
     var body: some View {
-        OnboardingQuestionView(
+        OnboardingLeadingView(
             title: "Choose your gender",
-            subtitle: Constants.Messages.customPlan,
-            filledCount: 1,
-            onBack: { router.pop() }
+            subtitle: Constants.Messages.customPlan
         ) {
-            OptionButton(label: "Male", icon: .shape(AnyShape(Male())), color: Color.blue) {
-                router.navigateToNumWorkouts()
-            }
-            OptionButton(label: "Female", icon: .shape(AnyShape(Female())), color: Color.purple) {
-                router.navigateToNumWorkouts()
-            }
+            OptionButtonList(
+                options: [
+                    OptionButtonInfo(label: "Male", icon: .shape(AnyShape(Male())), color: .blue),
+                    OptionButtonInfo(label: "Female", icon: .shape(AnyShape(Female())), color: .purple)
+                ]) {
+                    router.push(OnboardingRoute.allCases[currentIndex + 1])
+                }
         }
     }
-}
-
-#Preview {
-    GenderView()
-        .withRouter()
 }

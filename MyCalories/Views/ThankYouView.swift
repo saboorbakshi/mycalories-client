@@ -11,27 +11,11 @@ struct ThankYouView: View {
     @Environment(Router.self) var router
     
     var body: some View {
-        VStack(spacing: Constants.Spacing.large) {
+        OnboardingCenterView(showButton: true) {
             titleView
             subtitleView
         }
-        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
-        .padding(.horizontal)
-        .safeAreaInset(edge: .bottom) {
-            AppButton(label: "Continue", type: .primary) {
-                router.navigateToRating()
-            }
-            .padding(.horizontal)
-        }
-        .safeAreaInset(edge: .top) {
-            OnboardingToolbar(filledCount: 15) {
-                router.pop()
-            }
-        }
-        .toolbarVisibility(.hidden)
     }
-    
-    // MARK: - Components
     
     private var titleView: some View {
         Group {

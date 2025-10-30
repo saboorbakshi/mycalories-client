@@ -1,39 +1,30 @@
 //
-//  WeightGoalView.swift
+//  WeightGoalVie.swift
 //  MyCalories
 //
-//  Created by Saboor Bakshi on 2025-10-27.
+//  Created by Saboor Bakshi on 2025-10-30.
 //
 
 import SwiftUI
 
-// <0x1142292c0> Gesture: System gesture gate timed out due to SFSymbol use
-// Probably something to do with ScaleButtonStyle
-
 struct WeightGoalView: View {
     @Environment(Router.self) var router
+    @Environment(\.currentOnboardingIndex) var currentIndex
     
     var body: some View {
-        OnboardingQuestionView(
+        OnboardingLeadingView(
             title: "What is your goal?",
-            subtitle: "This helps us generate a plan for your calorie intake.",
-            filledCount: 8,
-            onBack: { router.pop() }
+            subtitle: "This helps us generate a plan for your calorie intake."
         ) {
-            OptionButton(label: "Lose weight", icon: .systemName("chart.line.downtrend.xyaxis"), color: .green) {
-                router.navigateToTargetWeight()
-            }
-            OptionButton(label: "Maintain weight", icon: .systemName("chart.line.flattrend.xyaxis"), color: .blue) {
-                router.navigateToTargetWeight()
-            }
-            OptionButton(label: "Gain weight", icon: .systemName("chart.line.uptrend.xyaxis"), color: .red) {
-                router.navigateToTargetWeight()
+            OptionButtonList(
+                options: [
+                    OptionButtonInfo(label: "Lose weight", icon: .systemName("chart.line.downtrend.xyaxis"), color: .green),
+                    OptionButtonInfo(label: "Maintain weight", icon: .systemName("chart.line.flattrend.xyaxis"), color: .blue),
+                    OptionButtonInfo(label: "Gain weight", icon: .systemName("chart.line.uptrend.xyaxis"), color: .red)
+                ]
+            ) {
+                router.push(OnboardingRoute.allCases[currentIndex + 1])
             }
         }
     }
-}
-
-#Preview {
-    WeightGoalView()
-        .withRouter()
 }

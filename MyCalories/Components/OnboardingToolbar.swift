@@ -8,43 +8,33 @@
 import SwiftUI
 
 struct OnboardingToolbar: View {
-    let filledCount: Int
-    let onBackTap: () -> Void
+    @Environment(Router.self) var router
+    @Environment(\.currentOnboardingIndex) var currentStep
     
-    let totalCount: Int = 19
+    let totalSteps: Int = OnboardingRoute.allCases.count
 
     var body: some View {
         HStack {
-            Button(action: onBackTap) {
-                Text("Back")
-                    .font(Font.icon)
-                    .padding(.horizontal, Constants.Padding.iconButtonTextInset)
-                    .frame(height: Constants.Size.iconButton)
-                    .foregroundColor(.foregroundSecondary)
-                    .background(.backgroundSecondary)
-                    .cornerRadius(Constants.Radius.full)
+            ToolbarButton(label: "Back") {
+                router.pop()
             }
             
             Spacer()
             
             HStack(spacing: 6) {
-                ForEach(0...totalCount, id: \.self) { index in
+                ForEach(0..<totalSteps, id: \.self) { index in
                     RoundedRectangle(cornerRadius: Constants.Radius.full)
-                        .fill(index < filledCount ? Color.foregroundSecondary : Color.foregroundSecondary.opacity(0.2))
+                        .fill(index < currentStep + 1 ? Color.foregroundSecondary : Color.foregroundSecondary.opacity(0.2))
                         .frame(width: 3, height: 15)
                 }
             }
             
             Spacer()
             
-            // Invisible placeholder to balance layout
-            Button(action: {}) {
-                Text("Back")
-                    .font(Font.icon)
-                    .padding(.horizontal, Constants.Padding.iconButtonTextInset)
-                    .frame(height: Constants.Size.iconButton)
-                    .opacity(0)
+            ToolbarButton(label: "Back") {
+                router.pop()
             }
+            .opacity(0)
         }
         .padding(.horizontal)
         .frame(maxWidth: .infinity)
@@ -52,7 +42,6 @@ struct OnboardingToolbar: View {
 }
 
 #Preview {
-    OnboardingToolbar(filledCount: 7) {
-        print("Button Pressed")
-    }
+    OnboardingToolbar()
+        .withRouter()
 }

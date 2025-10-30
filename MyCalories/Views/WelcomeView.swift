@@ -25,10 +25,10 @@ struct WelcomeView: View {
         .safeAreaInset(edge: .bottom) {
             VStack {
                 AppButton(label: "Get Started", type: .primary) {
-                    router.navigateToGender()
+                    router.push(.gender)
                 }
                 AppButton(label: "Already have an account?", type: .secondary) {
-                    router.navigateToGender()
+                    router.push(.gender)
                 }
             }
             .padding(.horizontal)

@@ -8,18 +8,11 @@
 import SwiftUI
 
 struct PlanDetailsView: View {
-    @Environment(Router.self) var router
-    
     var body: some View {
-        OnboardingQuestionView(
+        OnboardingLeadingView(
             title: "Congratulations! Your custom plan is ready",
-            filledCount: 19,
-            onBack: { router.pop() }
-        ) {
-            AppButton(label: "Continue", type: .primary) {
-                router.navigateToSaveProgress()
-            }
-        }
+            showButton: true
+        ) {}
     }
 }
 

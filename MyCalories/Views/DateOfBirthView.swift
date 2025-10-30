@@ -8,8 +8,6 @@
 import SwiftUI
 
 struct DateOfBirthView: View {
-    @Environment(Router.self) var router
-    
     @State private var selectedDay = 15
     @State private var selectedMonth = 6
     @State private var selectedYear = 2000
@@ -23,14 +21,12 @@ struct DateOfBirthView: View {
     private let years = Array(1900...2020)
     
     var body: some View {
-        OnboardingQuestionView(
+        OnboardingLeadingView(
             title: "What is your date of birth?",
             subtitle: Constants.Messages.customPlan,
-            filledCount: 7,
-            onBack: { router.pop() }
+            showButton: true
         ) {
             HStack {
-                // Day Picker
                 Picker("Day", selection: $selectedDay) {
                     ForEach(days, id: \.self) { day in
                         Text("\(day)").tag(day)
@@ -39,7 +35,6 @@ struct DateOfBirthView: View {
                 }
                 .pickerStyle(.wheel)
                 
-                // Month Picker
                 Picker("Month", selection: $selectedMonth) {
                     ForEach(months, id: \.0) { month in
                         Text(month.1).tag(month.0)
@@ -48,7 +43,6 @@ struct DateOfBirthView: View {
                 }
                 .pickerStyle(.wheel)
                 
-                // Year Picker
                 Picker("Year", selection: $selectedYear) {
                     ForEach(years, id: \.self) { year in
                         Text("\(year)").tag(year)
@@ -60,10 +54,6 @@ struct DateOfBirthView: View {
             }
             .frame(height: Constants.Height.wheelPicker)
             .padding(.bottom, Constants.Padding.large)
-            
-            AppButton(label: "Continue", type: .primary) {
-                router.navigateToWeightGoal()
-            }
         }
     }
 }

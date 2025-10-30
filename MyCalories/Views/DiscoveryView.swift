@@ -2,43 +2,31 @@
 //  DiscoveryView.swift
 //  MyCalories
 //
-//  Created by Saboor Bakshi on 2025-10-27.
+//  Created by Saboor Bakshi on 2025-10-30.
 //
 
 import SwiftUI
 
 struct DiscoveryView: View {
     @Environment(Router.self) var router
+    @Environment(\.currentOnboardingIndex) var currentIndex
     
     var body: some View {
-        OnboardingQuestionView(
-            title: "Where did you hear about us?",
-            filledCount: 3,
-            onBack: { router.pop() }
+        OnboardingLeadingView(
+            title: "Where did you hear about us?"
         ) {
-            OptionButton(label: "App Store") {
-                router.navigateToTrialHistory()
-            }
-            OptionButton(label: "TikTok") {
-                router.navigateToTrialHistory()
-            }
-            OptionButton(label: "Instagram") {
-                router.navigateToTrialHistory()
-            }
-            OptionButton(label: "Facebook") {
-                router.navigateToTrialHistory()
-            }
-            OptionButton(label: "Friends and Family") {
-                router.navigateToTrialHistory()
-            }
-            OptionButton(label: "Other") {
-                router.navigateToTrialHistory()
+            OptionButtonList(
+                options: [
+                    OptionButtonInfo(label: "App Store"),
+                    OptionButtonInfo(label: "TikTok"),
+                    OptionButtonInfo(label: "Instagram"),
+                    OptionButtonInfo(label: "Facebook"),
+                    OptionButtonInfo(label: "Friends and Family"),
+                    OptionButtonInfo(label: "Other")
+                ]
+            ) {
+                router.push(OnboardingRoute.allCases[currentIndex + 1])
             }
         }
     }
-}
-
-#Preview {
-    DiscoveryView()
-        .withRouter()
 }

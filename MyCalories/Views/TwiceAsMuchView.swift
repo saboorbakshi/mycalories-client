@@ -11,15 +11,10 @@ struct TwiceAsMuchView: View {
     @Environment(Router.self) var router
     
     var body: some View {
-        OnboardingQuestionView(
+        OnboardingLeadingView(
             title: "Gain twice as much weight with MyCalories vs on your own",
-            filledCount: 5,
-            onBack: { router.pop() }
-        ) {
-            AppButton(label: "Continue", type: .primary) {
-                router.navigateToHeightAndWeight()
-            }
-        }
+            showButton: true
+        ) {}
     }
 }
 

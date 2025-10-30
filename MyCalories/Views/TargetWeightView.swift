@@ -17,25 +17,22 @@ struct TargetWeightView: View {
     let weights = Array(40...200)
     
     var body: some View {
-        OnboardingQuestionView(
+        OnboardingLeadingView(
             title: "What is your desired weight?",
             subtitle: Constants.Messages.customPlan,
-            filledCount: 9,
-            onBack: { router.pop() }
+            showButton: true
         ) {
-            HStack(alignment: .lastTextBaseline, spacing: 4) {
-                Text ("\(targetWeight, specifier: "%.1f")")
-                    .font(.questionTitle)
-                Text ("kg")
-                    .font(.pickerUnit)
-                    .foregroundStyle(.foregroundSecondary)
-            }
-            
-            HorizontalWheelPicker(config: config, value: $targetWeight)
-                .padding(.bottom, Constants.Spacing.large)
-            
-            AppButton(label: "Continue", type: .primary) {
-                router.navigateToRealisticTarget()
+            VStack {
+                HStack(alignment: .lastTextBaseline, spacing: 4) {
+                    Text ("\(targetWeight, specifier: "%.1f")")
+                        .font(.questionTitle)
+                    Text ("kg")
+                        .font(.pickerUnit)
+                        .foregroundStyle(.foregroundSecondary)
+                }
+                
+                HorizontalWheelPicker(config: config, value: $targetWeight)
+                    .padding(.bottom, Constants.Spacing.large)
             }
         }
     }

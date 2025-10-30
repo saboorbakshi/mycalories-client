@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct HeightAndWeightView: View {
-    @Environment(Router.self) var router
     @State private var selectedHeight = 170
     @State private var selectedWeight = 70
     
@@ -16,11 +15,10 @@ struct HeightAndWeightView: View {
     let weights = Array(40...200)
     
     var body: some View {
-        OnboardingQuestionView(
+        OnboardingLeadingView(
             title: "What is your height and weight?",
             subtitle: Constants.Messages.customPlan,
-            filledCount: 6,
-            onBack: { router.pop() }
+            showButton: true
         ) {
             HStack {
                 Picker("Height", selection: $selectedHeight) {
@@ -41,10 +39,6 @@ struct HeightAndWeightView: View {
             }
             .frame(height: Constants.Height.wheelPicker)
             .padding(.bottom, Constants.Padding.large)
-            
-            AppButton(label: "Continue", type: .primary) {
-                router.navigateToDateOfBirth()
-            }
         }
     }
 }

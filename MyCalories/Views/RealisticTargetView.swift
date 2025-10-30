@@ -9,6 +9,7 @@ import SwiftUI
 
 struct RealisticTargetView: View {
     @Environment(Router.self) var router
+    @Environment(\.currentOnboardingIndex) var currentIndex
     
     let targetWeight: Float = 78.3
     
@@ -23,29 +24,20 @@ struct RealisticTargetView: View {
     }
     
     var body: some View {
-        VStack(spacing: Constants.Spacing.large) {
+        OnboardingCenterView(
+            showButton: true,
+            buttonAction: {
+                if goalType == "Maintaining" {
+                    router.push(OnboardingRoute.allCases[currentIndex + 2])
+                } else {
+                    router.push(OnboardingRoute.allCases[currentIndex + 1])
+                }
+            }
+        ) {
             titleView
             subtitleView
         }
-        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
-        .padding(.horizontal)
-        .safeAreaInset(edge: .bottom) {
-            AppButton(label: "Continue", type: .primary) {
-                goalType == "Maintaining"
-                ? router.navigateToObstacle()
-                : router.navigateToPace()
-            }
-            .padding(.horizontal)
-        }
-        .safeAreaInset(edge: .top) {
-            OnboardingToolbar(filledCount: 10) {
-                router.pop()
-            }
-        }
-        .toolbarVisibility(.hidden)
     }
-    
-    // MARK: - Components
     
     private var titleView: some View {
         Group {

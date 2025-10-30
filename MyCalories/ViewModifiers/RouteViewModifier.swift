@@ -10,26 +10,28 @@ import SwiftUI
 
 struct RouteViewModifier: ViewModifier {
     @State private var router = Router()
-    
-    // create fillCount numbers here and next pg navigation too...
-    
-    private func routeView(for route: Route) -> some View {
+        
+    private func OnboardingRouteView(for onboardingRoute: OnboardingRoute) -> some View {
         Group {
-            switch route {
+            switch onboardingRoute {
             case .gender:
                 GenderView()
             case .numWorkouts:
-                NumWorkoutsView()
+                NumberOfWorkoutsView()
             case .discovery:
                 DiscoveryView()
             case .trialHistory:
                 TrialHistoryView()
+            case .weightGoal:
+                WeightGoalView()
+            case .obstacle:
+                ObstacleView()
+            case .accomplish:
+                AccomplishView()
             case .heightAndWeight:
                 HeightAndWeightView()
             case .dateOfBirth:
                 DateOfBirthView()
-            case .weightGoal:
-                WeightGoalView()
             case .targetWeight:
                 TargetWeightView()
             case .realisticTarget:
@@ -38,37 +40,30 @@ struct RouteViewModifier: ViewModifier {
                 PaceView()
             case .twiceAsMuch:
                 TwiceAsMuchView()
-            case .obstacle:
-                ObstacleView()
-            case .accomplish:
-                AccomplishView()
             case .thankYou:
                 ThankYouView()
             case .rating:
                 RatingView()
-            case .notifications:
-                NotificationsView()
             case .generatePlan:
                 GeneratePlanView()
             case .settingUpPlan:
                 SettingUpPlanView()
             case .planDetails:
                 PlanDetailsView()
-            case .saveProgress:
-                SaveProgressView()
-            case .paywall:
-                PaywallView()
+            case .signUp:
+                SignUpView()
             }
         }
         .environment(router)
+        .environment(\.currentOnboardingIndex, OnboardingRoute.allCases.firstIndex(of: onboardingRoute)!)
     }
     
     func body(content: Content) -> some View {
         NavigationStack(path: $router.path) {
             content
                 .environment(router)
-                .navigationDestination(for: Route.self) { route in
-                    routeView(for: route)
+                .navigationDestination(for: OnboardingRoute.self) { OnboardingRoute in
+                    OnboardingRouteView(for: OnboardingRoute)
                 }
         }
     }
@@ -79,4 +74,3 @@ extension View {
         modifier(RouteViewModifier())
     }
 }
-

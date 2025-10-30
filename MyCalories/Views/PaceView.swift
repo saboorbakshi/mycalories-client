@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct PaceView: View {
-    @Environment(Router.self) var router
     @State private var paceValue: Double = 0.8
     
     let targetWeight: Double = 78.3
@@ -38,10 +37,9 @@ struct PaceView: View {
     }
     
     var body: some View {
-        OnboardingQuestionView(
+        OnboardingLeadingView(
             title: "How fast do you want to reach your goal?",
-            filledCount: 11,
-            onBack: { router.pop() }
+            showButton: true
         ) {
             VStack {
                 VStack(spacing: Constants.Spacing.large) {
@@ -82,10 +80,6 @@ struct PaceView: View {
                 }
             }
             .padding(.bottom, Constants.Padding.large * 2)
-            
-            AppButton(label: "Continue", type: .primary) {
-                router.navigateToObstacle()
-            }
         }
     }
 }

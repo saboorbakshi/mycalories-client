@@ -22,18 +22,18 @@ struct AnyShape: Shape {
     }
 }
 
-enum OptionIcon {
+enum OptionButtonIcon {
     case shape(AnyShape)
     case systemName(String)
 }
 
 struct OptionButton: View {
     let label: String
-    let icon: OptionIcon?
+    let icon: OptionButtonIcon?
     let color: Color?
     let action: () -> Void
 
-    init(label: String, icon: OptionIcon? = nil, color: Color? = nil, action: @escaping () -> Void) {
+    init(label: String, icon: OptionButtonIcon? = nil, color: Color? = nil, action: @escaping () -> Void) {
         self.label = label
         self.icon = icon
         self.color = color

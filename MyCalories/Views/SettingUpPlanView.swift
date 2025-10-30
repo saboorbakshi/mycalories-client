@@ -11,15 +11,10 @@ struct SettingUpPlanView: View {
     @Environment(Router.self) var router
     
     var body: some View {
-        OnboardingQuestionView(
+        OnboardingLeadingView(
             title: "We are setting everything up for you",
-            filledCount: 1,
-            onBack: { router.pop() }
-        ) {
-            AppButton(label: "Continue", type: .primary) {
-                router.navigateToPlanDetails()
-            }
-        }
+            showButton: true
+        ) {}
     }
 }
 
