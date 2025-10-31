@@ -27,7 +27,7 @@ struct TargetWeightView: View {
                     Text ("\(targetWeight, specifier: "%.1f")")
                         .font(.questionTitle)
                     Text ("kg")
-                        .font(.pickerUnit)
+                        .font(Font.custom("SuisseIntl-Medium", size: 20))
                         .foregroundStyle(.foregroundSecondary)
                 }
                 

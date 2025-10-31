@@ -57,5 +57,4 @@ extension Font {
     static let optionButton = Font.custom("SuisseIntl-Regular", size: 17)
     static let questionTitle = Font.custom("SuisseIntl-SemiBold", size: 32)
     static let questionSubtitle = Font.custom("SuisseIntl-Regular", size: 17)
-    static let pickerUnit = Font.custom("SuisseIntl-Medium", size: 20)
 }

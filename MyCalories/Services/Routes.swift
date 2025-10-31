@@ -19,13 +19,13 @@ enum OnboardingRoute: CaseIterable {
     case targetWeight
     case realisticTarget
     case pace
-    case twiceAsMuch // 1
+    case twiceAsMuch
     case obstacle
     case accomplish
     case thankYou
-    case rating // 2
+    case rating
     case generatePlan
-    case settingUpPlan // 4
-    case planDetails // 5
-    case signUp // 6
+    case settingUpPlan
+    case planDetails // *
+    case signUp
 }

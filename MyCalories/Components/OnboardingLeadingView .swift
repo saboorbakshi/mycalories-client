@@ -17,14 +17,16 @@ struct OnboardingLeadingView<Content: View>: View {
     let showButton: Bool
     let buttonLabel: String
     let buttonAction: (() -> Void)?
+    let setPadding: Bool
     @ViewBuilder let content: Content
     
-    init(title: String, subtitle: String? = nil, showButton: Bool = false, buttonLabel: String = "Continue", buttonAction: (() -> Void)? = nil, @ViewBuilder content: () -> Content) {
+    init(title: String, subtitle: String? = nil, showButton: Bool = false, buttonLabel: String = "Continue", buttonAction: (() -> Void)? = nil, setPadding: Bool = true, @ViewBuilder content: () -> Content) {
         self.title = title
         self.subtitle = subtitle
         self.showButton = showButton
         self.buttonLabel = buttonLabel
         self.buttonAction = buttonAction
+        self.setPadding = setPadding
         self.content = content()
     }
     
@@ -35,18 +37,24 @@ struct OnboardingLeadingView<Content: View>: View {
             Text(title)
                 .font(Font.questionTitle)
                 .padding(.top)
+                .padding(.horizontal)
             
             if let subtitle = subtitle {
                 Text(subtitle)
                     .font(Font.questionSubtitle)
                     .foregroundColor(.foregroundSecondary)
+                    .padding(.horizontal)
             }
             
             Spacer()
             
-            content
+            if setPadding {
+                content.padding(.horizontal)
+            } else {
+                content
+            }
+
         }
-        .padding(.horizontal)
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
         .safeAreaInset(edge: .bottom) {
             if showButton {
