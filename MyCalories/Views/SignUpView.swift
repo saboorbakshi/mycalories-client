@@ -37,17 +37,14 @@ struct SignUpView: View {
                         .frame(width: 26,height: 26)
                         .opacity(0)
                 }
+                .padding(.horizontal)
+                .frame(height: Constants.Height.primaryButton)
+                .frame(maxWidth: .infinity)
+                .background(.backgroundButton)
+                .foregroundColor(.foregroundButton)
+                .cornerRadius(Constants.Radius.full)
             }
-            .padding(.horizontal)
-            .frame(height: Constants.Height.primaryButton)
-            .frame(maxWidth: .infinity)
-            .background(.backgroundButton)
-            .foregroundColor(.foregroundButton)
-            .cornerRadius(Constants.Radius.full)
             .buttonStyle(ScaleButtonStyle())
-            
-            
-            
         }
     }
 }
